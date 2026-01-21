@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 # Parameters
 # =========================================================
 N = 16
-n_iters = 3000
-alpha = 0.5         # WGS weight (0 = GS, 0.3–0.7 typical)
-eps = 1e-7           # numerical safety
+n_iters = 1000
+alpha = 0.559         # WGS weight (0 = GS, 0.3–0.7 typical)
+eps = 1e-2           # numerical safety
 
 # =========================================================
 # Spatial grid
@@ -18,7 +18,7 @@ X, Y = np.meshgrid(x, x)
 # =========================================================
 # Source amplitude (Gaussian)
 # =========================================================
-A_source = np.exp(-(X**2 + Y**2) / 0.3)
+A_source = np.exp(-(X**2 + Y**2) / 0.6)
 A_source /= A_source.max()
 
 # =========================================================

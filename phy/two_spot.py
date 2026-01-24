@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 # -------------------------------------------------
 # Parameters
 # -------------------------------------------------
-N = 100
+N = 1000
 L = 2.0
 w0 = 0.08
 A = 1.0
@@ -19,7 +19,7 @@ X, Y = np.meshgrid(x, y)
 # -------------------------------------------------
 # Initial Gaussian amplitude and intensity
 # -------------------------------------------------
-amplitude = A * np.exp(-(X**2 + Y**2) / (w0**2))
+amplitude = A * np.exp(-((X**2 + Y**2) / (w0**2))**4)
 intensity_in = amplitude**2
 #print("Intenisty=",intensity_in)
 print(np.shape(intensity_in))
@@ -49,7 +49,7 @@ fig, ax = plt.subplots(1, 3, figsize=(15, 4))
 
 # (1) Initial intensity
 im0 = ax[0].imshow(
-    intensity_in,
+    abs(U),
     extent=[-L/2, L/2, -L/2, L/2],
     cmap="inferno"
 )
